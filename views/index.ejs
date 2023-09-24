@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Display</h1>
+  <table border="1">
+    <tr>
+      <th>Full Name</th>
+      <th>Email Address</th>
+      <th>Image</th>
+    </tr>
+    <% if (customers.length !==0) { %>
+      <% customers.forEach(function(data, index) { %>
+        <tr>
+          <td>
+            <%= data.fullname %>
+          </td>
+          <td>
+            <%= data.email %>
+          </td>
+          <td>
+              <img src="/images/<%= data.image %>" style="width: 80px; height: auto;"
+                class="" alt="img">
+          </td>
+        </tr>
+        <% }); %>
+          <% } else { %>
+            <tr>
+              <td colspan="3">No Data Found</td>
+            </tr>
+            <% } %>
+  </table>
+</body>
+
+</html>
